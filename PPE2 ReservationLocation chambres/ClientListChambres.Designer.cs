@@ -1,6 +1,6 @@
 ﻿namespace PPE2_ReservationLocation_chambres
 {
-    partial class Form2
+    partial class ClientListChambres
     {
         /// <summary>
         /// Required designer variable.
