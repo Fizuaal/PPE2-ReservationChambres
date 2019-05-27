@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PPE2_ReservationLocation_chambres
 {
-    class Compte
+    class GestionCompte
     {
         private static string Connexion = @"server=localhost;password=;userid=root;database=ppe2location";
         private static MySqlConnection connec;
@@ -48,16 +48,19 @@ namespace PPE2_ReservationLocation_chambres
             return res;
         }
 
-        public static string ConnexionVerifCompte()
+        public static string[] ConnexionRecupParamCompte(string id)
         {
-            string res = "error";
             MySqlCommand commande = connec.CreateCommand();
-            // Creation de la requête en fonction de l'user
-            string req1 = "SELECT typeCompte FROM compte";
-            commande.CommandText = req1;
+            // Récupère USER / MOT DE PASSE 
+            string req0 = "SELECT *, mdp FROM comptes WHERE NOM_COMPTE='" + id +"'";
+            commande.CommandText = req0;
+
+
             MySqlDataReader lire = commande.ExecuteReader();
-            res = lire.Read();
-            return res;
+            lire.Read();
+            string[] parametres = new string[] { lire.GetString("NOM_COMPTE"), lire.GetString("TYPECOMPTE") };
+            lire.Close();
+            return parametres;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace PPE2_ReservationLocation_chambres
 {
-    partial class Connexion
+    partial class ConnexionForm
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -33,6 +33,7 @@
             this.txtMdp = new System.Windows.Forms.TextBox();
             this.lblMDP = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
+            this.ErreurUtilis = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btConnect
@@ -51,6 +52,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(295, 20);
             this.txtUsername.TabIndex = 2;
+            this.txtUsername.Text = "Fizuaal";
             // 
             // txtMdp
             // 
@@ -59,6 +61,7 @@
             this.txtMdp.PasswordChar = '*';
             this.txtMdp.Size = new System.Drawing.Size(295, 20);
             this.txtMdp.TabIndex = 3;
+            this.txtMdp.Text = "1998killian";
             // 
             // lblMDP
             // 
@@ -78,18 +81,30 @@
             this.lblUsername.TabIndex = 5;
             this.lblUsername.Text = "Nom d\'utilisateur:";
             // 
-            // Connexion
+            // ErreurUtilis
+            // 
+            this.ErreurUtilis.AutoSize = true;
+            this.ErreurUtilis.ForeColor = System.Drawing.Color.Crimson;
+            this.ErreurUtilis.Location = new System.Drawing.Point(147, 257);
+            this.ErreurUtilis.Name = "ErreurUtilis";
+            this.ErreurUtilis.Size = new System.Drawing.Size(256, 13);
+            this.ErreurUtilis.TabIndex = 6;
+            this.ErreurUtilis.Text = "Le nom d\'utilisateur ou le mot de passe est incorrecte";
+            this.ErreurUtilis.Visible = false;
+            // 
+            // ConnexionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 377);
+            this.Controls.Add(this.ErreurUtilis);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblMDP);
             this.Controls.Add(this.txtMdp);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.btConnect);
-            this.Name = "Connexion";
-            this.Text = "Form1";
+            this.Name = "ConnexionForm";
+            this.Text = "Connexion";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,6 +116,7 @@
         private System.Windows.Forms.TextBox txtMdp;
         private System.Windows.Forms.Label lblMDP;
         private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label ErreurUtilis;
     }
 }
 

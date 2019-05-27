@@ -16,7 +16,7 @@ namespace PPE2_ReservationLocation_chambres
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Connexion());
+            Application.Run(new ConnexionForm());
         }
     }
 }

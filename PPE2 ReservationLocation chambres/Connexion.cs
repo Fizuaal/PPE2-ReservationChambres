@@ -10,20 +10,26 @@ using System.Windows.Forms;
 
 namespace PPE2_ReservationLocation_chambres
 {
-    public partial class Connexion : Form
+    public partial class ConnexionForm : Form
     {
-        public Connexion()
+        public ConnexionForm()
         {
             InitializeComponent();
         }
 
         private void btAdminConnect_Click(object sender, EventArgs e)
         {
-            Compte.ConnexionBDD();
-            bool Connecte = Compte.ConnexionVerif(txtUsername.Text, txtMdp.Text);
+            GestionCompte.ConnexionBDD();
+            bool Connecte = GestionCompte.ConnexionVerif(txtUsername.Text, txtMdp.Text);
             if (Connecte == true)
             {
-
+                this.Hide();
+                ClientListChambresForm listChambre = new ClientListChambresForm(txtUsername.Text);
+                listChambre.Show();
+            }
+            else
+            {
+                ErreurUtilis.Visible = true;
             }
         }
     }
